@@ -76,11 +76,63 @@
         </div>
     </section>
 
-    <section id="sets" class="py-20 px-6">
-        <div class="container mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-12 uppercase">Últimos Sets</h3>
-            <div class="bg-zinc-800 rounded-xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
-                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/TU_TRACK_ID&color=%23e3bb3e&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    <section id="sets" class="py-24 px-6 bg-zinc-950 relative overflow-hidden">
+        
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#e3bb3e] rounded-full blur-[120px] opacity-10 pointer-events-none"></div>
+
+        <div class="container mx-auto relative z-10">
+            
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-2">
+                    La Timba <span class="text-[#e3bb3e]">en visuales</span>
+                </h3>
+                <p class="text-zinc-400">Suscríbete al canal y vive la timba y la musica cubana</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                
+                <div class="relative group">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-[#e3bb3e] to-red-600 rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                    
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl border border-zinc-800 transform transition duration-500 group-hover:-translate-y-2 group-hover:scale-[1.01]">
+                        <iframe class="w-full aspect-video" 
+                            src="https://www.youtube.com/embed/s1O2wG22FCQ?controls=1&rel=0&modestbranding=1" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="text-center lg:text-left space-y-6">
+                    <div class="inline-block bg-red-600/10 text-red-500 font-bold px-4 py-1 rounded-full text-xs uppercase tracking-widest border border-red-600/20 mb-2">
+                        🔴 Nuevo Contenido
+                    </div>
+                    
+                    <h4 class="text-3xl font-bold leading-tight">
+                        No solo se escucha,<br>
+                        <span class="text-white">¡Se baila y se goza!</span>
+                    </h4>
+                    
+                    <p class="text-zinc-400 leading-relaxed">
+                        Entra a mi canal oficial para ver recaps de fiestas, conciertos completos, sesiones en vivo y la energía que se vive en la pista.
+                    </p>
+
+                    <a href="https://www.youtube.com/@djtimbao" target="_blank" 
+                       class="group inline-flex items-center gap-4 bg-zinc-900 hover:bg-[#ff0000] border border-zinc-700 hover:border-[#ff0000] text-white px-8 py-5 rounded-xl transition-all duration-300 shadow-lg transform hover:scale-105">
+                        
+                        <svg class="w-8 h-8 text-red-600 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                        </svg>
+                        
+                        <div class="text-left">
+                            <div class="text-xs font-bold uppercase text-zinc-400 group-hover:text-white/80">Ver canal oficial</div>
+                            <div class="text-lg font-black leading-none">YOUTUBE</div>
+                        </div>
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
