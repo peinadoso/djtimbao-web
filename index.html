@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>DJ Timbao | Timba, salsa y Son #BailaYGoza</title>
+    <title>DJ Timbao | #BailaYGoza</title>
     
     <!--META TAGS PARA COMPARTIR POR WHATSAPP Y FACEBOOK-->
     <meta name="description" content="Especialista en Timba, Salsa y Son. Desde 2004 llevando música cubana a las pistas.>
@@ -31,17 +31,44 @@
             background-size: cover;
             background-position: center;
         }
+
+        /* Animación del Carrusel de Fondo */
+        @keyframes fadeZoom {
+            0% { opacity: 0; transform: scale(1); }
+            10% { opacity: 1; }
+            30% { opacity: 1; transform: scale(1.1); } /* Se mantiene visible y hace zoom */
+            50% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0; /* Empieza invisible */
+            animation: fadeZoom 16s infinite; /* Ciclo total de 16 segundos */
+        }
+
+        /* Retrasos para que no salgan todas a la vez */
+        .slide-1 { animation-delay: 0s; }
+        .slide-2 { animation-delay: 4s; }
+        .slide-3 { animation-delay: 8s; }
+        .slide-4 { animation-delay: 12s; }
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
 
     <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md py-4">
+        <!--LOGO HOME DE DJ TIMBAO-->
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <!--LOGO HOME DE DJ TIMBAO-->
             <a href="/" class="block w-40 md:w-48 hover:opacity-80 transition duration-300">
                 <img src="images/logo.png" alt="DJ Timbao Logo" class="w-full h-auto">
             </a>
-            <!--CIERRE DEL LOGO HOME DE DJ TIMBAO-->
+        <!--CIERRE DEL LOGO HOME DE DJ TIMBAO-->
             <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest">
                 <a href="#bio" class="hover:text-[#e3bb3e] transition">Bio</a>
                 <a href="#sets" class="hover:text-[#e3bb3e] transition">Música</a>
@@ -50,12 +77,30 @@
         </div>
     </nav>
 
-    <header class="h-screen flex items-center justify-center hero-gradient text-center px-6">
-        <div class="max-w-3xl">
-            <h2 class="text-5xl md:text-8xl font-black mb-4 uppercase italic">Flow, Timba y Sabor</h2>
-            <p class="text-xl md:text-2xl font-light mb-8 text-zinc-300">22 años llevando la esencia de la música cubana a las pistas del mundo.</p>
-            <a href="#booking" class="bg-[#e3bb3e] hover:bg-[#cca736] text-black px-10 py-4 rounded-full font-bold uppercase tracking-widest transition transform hover:scale-105 inline-block">Contrataciones</a>
+    <!--CARRUSEL HERO-->
+    <header class="relative h-screen w-full overflow-hidden flex items-center justify-center text-center px-6">
+        
+        <div class="absolute inset-0 z-0">
+            <div class="hero-slide slide-1" style="background-image: url('images/slide1.webp');"></div>
+            <div class="hero-slide slide-2" style="background-image: url('images/slide2.webp');"></div>
+            <div class="hero-slide slide-3" style="background-image: url('images/slide3.webp');"></div>
+            <div class="hero-slide slide-4" style="background-image: url('images/slide4.webp');"></div>
         </div>
+
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <!--FIN DEL CARRUSEL HERO-->
+        <div class="relative z-20 max-w-4xl fade-in-up">
+            <h2 class="text-5xl md:text-8xl font-black mb-4 uppercase italic tracking-tighter text-white drop-shadow-2xl">
+                Flow, Timba <br> <span class="text-[#e3bb3e]">y Sabor</span>
+            </h2>
+            <p class="text-xl md:text-2xl font-light mb-8 text-zinc-200 drop-shadow-md">
+                22 años llevando la esencia de la música cubana a las pistas del mundo.
+            </p>
+            <a href="#booking" class="bg-[#e3bb3e] hover:bg-[#cca736] text-black px-10 py-4 rounded-full font-bold uppercase tracking-widest transition transform hover:scale-105 inline-block shadow-[0_0_20px_rgba(227,187,62,0.6)]">
+                Contrataciones
+            </a>
+        </div>
+
     </header>
 
     <section id="bio" class="py-20 bg-zinc-900 px-6">
