@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Timbao | Timba, salsa y Son</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1514525253361-bee8a4874b7c?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <h1 class="text-2xl font-black tracking-tighter text-[#e3bb3e]">DJ TIMBAO</h1>
+            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest">
+                <a href="#bio" class="hover:text-[#e3bb3e] transition">Bio</a>
+                <a href="#sets" class="hover:text-[#e3bb3e] transition">Música</a>
+                <a href="#booking" class="hover:text-[#e3bb3e] transition">Booking</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="h-screen flex items-center justify-center hero-gradient text-center px-6">
+        <div class="max-w-3xl">
+            <h2 class="text-5xl md:text-8xl font-black mb-4 uppercase italic">Flow, Timba y Sabor</h2>
+            <p class="text-xl md:text-2xl font-light mb-8 text-zinc-300">22 años llevando la esencia de la música cubana a las pistas del mundo.</p>
+            <a href="#booking" class="bg-[#e3bb3e] hover:bg-[#cca736] text-black px-10 py-4 rounded-full font-bold uppercase tracking-widest transition transform hover:scale-105 inline-block">Contrataciones</a>
+        </div>
+    </header>
+
+    <section id="bio" class="py-20 bg-zinc-900 px-6">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-3xl font-bold mb-6 text-[#e3bb3e] uppercase">La Trayectoria</h3>
+                <p class="text-zinc-400 leading-relaxed mb-4">
+                    Nacido en Caracas y radicado en Buenos Aires, DJ Timbao ha dedicado más de dos décadas a perfeccionar el arte de la selección musical. Especialista en Timba, salsa y Son, pero moviendose por toda la musica cubana, su estilo es reconocido por ser alegre, potente y, sobre todo, altamente bailable.
+                </p>
+                <p class="text-zinc-400 leading-relaxed">
+                    Organizador del congreso "La Caliente" antes llamado "Cuban Dance Camp Argentina", Timbao no solo mezcla música, crea experiencias que conectan la tradición cubana con la energía del ambiente timbero moderno.
+                </p>
+            </div>
+            <div class="bg-zinc-800 p-8 rounded-2xl border border-zinc-700 text-center">
+                <h4 class="text-6xl font-black text-white mb-2">22+</h4>
+                <p class="text-[#e3bb3e] uppercase font-bold tracking-widest">Años de Experiencia</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sets" class="py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-12 uppercase">Últimos Sets</h3>
+            <div class="bg-zinc-800 rounded-xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/TU_TRACK_ID&color=%23e3bb3e&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-20 bg-[#e3bb3e] text-zinc-950 text-center px-6">
+        <div class="container mx-auto max-w-xl">
+            <h3 class="text-4xl font-black mb-6 uppercase tracking-tighter">¿Listo para calentarla?</h3>
+            <p class="text-xl mb-10 font-medium">Para eventos, festivales, congreso y más, escribe directamente a:</p>
+            <a href="mailto:hablame@djtimbao.com" class="text-2xl md:text-4xl font-bold border-b-4 border-zinc-950 pb-2 hover:text-white hover:border-white transition">
+                hablame@djtimbao.com
+            </a>
+        </div>
+
+        <div class="max-w-xl mx-auto mt-12 bg-zinc-800 p-8 rounded-2xl shadow-2xl text-left border border-zinc-700">
+            <form action="https://formspree.io/f/mreqvyky" method="POST" class="space-y-4">
+        
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Nombre Completo</label>
+                    <input type="text" name="name" required 
+                        class="w-full bg-zinc-900 border border-zinc-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-[#e3bb3e] transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Email de Contacto</label>
+                    <input type="email" name="_replyto" required 
+                        class="w-full bg-zinc-900 border border-zinc-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-[#e3bb3e] transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Mensaje / Detalles del Evento</label>
+                    <textarea name="message" rows="4" required 
+                        class="w-full bg-zinc-900 border border-zinc-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-[#e3bb3e] transition"></textarea>
+                </div>
+
+                <input type="hidden" name="_subject" value="Nueva consulta para Booking: DJ Timbao">
+                
+                <button type="submit" 
+                    class="w-full bg-[#e3bb3e] hover:bg-[#cca736] text-black font-bold py-4 rounded-lg uppercase tracking-widest transition duration-300 shadow-lg">
+                    Enviar Mensaje
+                </button>
+                
+                <input type="hidden" name="_next" value="https://djtimbao.com/gracias.html">
+                
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-zinc-600 text-sm">
+        <p>&copy; 2026 DJ Timbao. Todos los derechos reservados.</p>
+        <p class="mt-2 uppercase tracking-tighter font-bold">Buenos Aires, Argentina</p>
+    </footer>
+
+</body>
+</html>
