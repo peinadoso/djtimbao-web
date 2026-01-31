@@ -116,7 +116,9 @@
                 </p>
             </div>
             <div class="bg-zinc-800 p-8 rounded-2xl border border-zinc-700 text-center">
-                <h4 class="text-6xl font-black text-white mb-2">+22</h4>
+                <div class="text-5xl font-black text-white mb-2 ... tus clases ...">
+                    +<span id="counter-years">0</span>
+                </div>
                 <p class="text-[#e3bb3e] uppercase font-bold tracking-widest">Años de Experiencia</p>
             </div>
         </div>
@@ -398,5 +400,52 @@
     </a>
     <!--CIERRE DE BOTON FLOTANTE DE TELEGRAM-->
 
+    <!--ANIMACION DEL NUMERO AÑOS DE EXPERIENCIA-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const counterElement = document.getElementById("counter-years");
+            const targetNumber = 22; // El número final
+            const duration = 2000; // Duración en milisegundos (2 segundos)
+            let hasAnimated = false;
+
+            // Función matemática para animar
+            const animateCounter = () => {
+                const startTime = performance.now();
+
+                const update = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    // Easing (Efecto suavizado para que frene al final)
+                    const easeOut = 1 - Math.pow(1 - progress, 3);
+                    
+                    const currentNumber = Math.floor(easeOut * targetNumber);
+                    counterElement.textContent = currentNumber;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        counterElement.textContent = targetNumber; // Asegurar que termine en 22 exacto
+                    }
+                };
+                requestAnimationFrame(update);
+            };
+
+            // El Observador (Detecta cuando el usuario ve el número)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        animateCounter();
+                        hasAnimated = true; // Para que no se repita si sube y baja
+                        observer.unobserve(entry.target); // Dejar de observar para ahorrar recursos
+                    }
+                });
+            }, { threshold: 0.5 }); // Se activa cuando el 50% del elemento es visible
+
+            if (counterElement) {
+                observer.observe(counterElement);
+            }
+        });
+    </script>
 </body>
 </html>
